@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=postgresql://postgres:thefallingsky195@postgres:5432/ads_db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "7860:7860"  
+    volumes:
+      - ./frontend:/app
+    environment:
+      - API_URL=http://backend:8000
+
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER= "dbuser"
+      - POSTGRES_PASSWORD= "password"
+      - POSTGRES_DB= "db"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
