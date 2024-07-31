@@ -1,0 +1,29 @@
+.ad-display {
+    width: 300px;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 1px solid #ddd;
+  }
+  
+  .ad-display h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .ad-display p {
+    color: #666;
+  }
+  
+  .ad-display a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #1877f2;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .ad-display a:hover {
+    background-color: #166fe5;
+  }
